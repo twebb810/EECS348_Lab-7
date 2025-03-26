@@ -1,25 +1,25 @@
-#include <stdio.h>
-#include "football.h"
+#include <stdio.h> // standard input output
+#include "football.h" // include score function declarations
 
 int main(int argc, char *argv[]) {
-    int score;
+    int score; // store user input
 
-    while (1) {
-        printf("\nEnter the NFL score (Enter 0 or 1 to STOP): ");
-        if (scanf("%d", &score) != 1) {
-            printf("Invalid input. Please enter a number.\n");
-            while (getchar() != '\n');  // Clear input buffer
-            continue;
+    while (1) { // infinite loop for input
+        printf("\nEnter the NFL score (Enter 0 or 1 to STOP): "); // prompt user
+        if (scanf("%d", &score) != 1) { // check input is number
+            printf("Invalid input Please enter a number\n"); // error message
+            while (getchar() != '\n'); // clear buffer
+            continue; // restart loop
         }
 
-        if (score <= 1) {
-            printf("Program terminated.\n");
-            break;
+        if (score <= 1) { // check for exit
+            printf("Program terminated\n"); // exit message
+            break; // end loop
         }
 
-        printf("Total combinations: %d\n", count_combinations(score));
-        print_combinations(score);
+        printf("Total combinations: %d\n", count_combinations(score)); // show count
+        print_combinations(score); // show details
     }
 
-    return 0;
+    return 0; // end program
 }
